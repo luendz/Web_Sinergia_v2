@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sinergia por la Infancia - Brindamos amor, protección y oportunidades a niños en situación de calle desde 2005.">
+
+    <title>Sinergia por la infancia</title>
+
+    <!-- Open Graph (para Facebook/WhatsApp) -->
+    <meta property="og:title" content="Sinergia por la Infancia - Casa Hogar Rayitos de Luz">
+    <meta property="og:description"
+        content="Brindamos protección y oportunidades a niños y adolescentes en situación de calle desde 2005.">
+    <meta property="og:image" content="https://luendz.github.io/Web_Sinergia/src/sinergia-por-la-infancia.png">
+    <meta property="og:url" content="https://luendz.github.io/Web_Sinergia/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sinergia por la Infancia - Casa Hogar Rayitos de Luz">
+    <meta name="twitter:description"
+        content="Organización en Lima y Callao dedicada a brindar protección y oportunidades a niños en situación de calle.">
+    <meta name="twitter:image" content="https://luendz.github.io/Web_Sinergia/src/sinergia-por-la-infancia.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="src/sinergia-por-la-infancia.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6.5.1 desde CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#0284c7', /* azul principal: usado en botones, iconos, enlaces destacados */
+                            600: '#0369a1', /* azul más oscuro: hover en botones o enlaces */
+                            700: '#0c4a6e'  /* azul fuerte: fondos sólidos, header, secciones clave */
+                        },
+                        accent: {
+                            500: '#ec4899', /* rosa vibrante: CTA principal (donar, ayudar) */
+                            600: '#db2777'  /* rosa intenso: hover en botones de acción */
+                        },
+                        neutral: {
+                            50: '#f9fafb',  /* gris casi blanco: fondos claros */
+                            100: '#f3f4f6', /* gris suave: tarjetas, contenedores secundarios */
+                            800: '#1f2937', /* gris oscuro: títulos principales, textos fuertes */
+                            900: '#EFEFEF'  /* gris más intenso: fondos oscuros, footer, textos muy contrastados */
+                        },
+                        paragraph: '#4b5563' /* gris medio: texto de párrafos, buena legibilidad */
+
+                    },
+                    fontSize: {
+                        'h1': '4rem',      // Hero title
+                        'h2': '2.5rem',    // Section titles
+                        'h3': '1.5rem',    // Subtitles
+                        'body': '1.125rem',// Main text
+                        'small': '0.875rem'// Secondary text
+                    },
+                    animation: {
+                        'float': 'float 2s ease-in-out infinite',
+                        'pulseGlow': 'pulseGlow 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif !important;
+            animation: scrollFade 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(236, 72, 153, 0.6),
+                    0 0 20px rgba(236, 72, 153, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 10px rgba(236, 72, 153, 0.9),
+                    0 0 50px rgba(236, 72, 153, 0.6);
+            }
+        }
+
+        @keyframes pulseIcon {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes heroPan {
+            from {
+                background-position: center 50%;
+            }
+
+            to {
+                background-position: center 60%;
+            }
+        }
+
+        @keyframes scrollFade {
+            from {
+                opacity: 0.9;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .icon-pulse:hover {
+            animation: pulseIcon 0.6s ease;
+        }
+
+        .animate-float-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 2s ease forwards;
+        }
+
+        .hero-bg {
+            background:
+                linear-gradient(rgba(12, 74, 110, 0.7), rgba(17, 24, 39, 0.7)),
+                /* degradado azul oscuro */
+                url('src/fondo.jpg') no-repeat center center / cover;
+            background-attachment: fixed;
+            animation: heroPan 20s infinite linear alternate;
+        }
+
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(192, 214, 226, 0.418), rgba(39, 18, 17, 0.76));
+            backdrop-filter: blur(1px);
+            /* difumina */
+            z-index: 0;
+        }
+
+
+
+        .hero-bg>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-bg-nosotros {
+            background: url('src/20-anos.png') no-repeat center center / cover;
+            background-size: cover;
+            background-position: center 50%;
+            background-attachment: fixed;
+        }
+
+        .hover-float:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden overflow-x-hidden bg-neutral-50 text-neutral-900">
+
+    <!-- Header -->
+    <header class="fixed top-5 left-0 w-full z-50">
+        <div class="w-[95%] mx-auto flex justify-between items-center h-20 bg-primary-700 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#inicio">
+                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-24">
+                    </a>
+                </div>
+
+                <!-- Links desktop -->
+                <div class="hidden md:flex space-x-14 font-semibold text-neutral-50">
+                    <a href="#inicio" class="relative group">Inicio
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#nosotros" class="relative group">Nosotros
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#programas" class="relative group">Programas
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#memorias" class="relative group">Memorias
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contacto" class="relative group">Contacto
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Botón Donar desktop -->
+                <div class="hidden md:flex">
+                    <a href="#donaciones"
+                        class="px-4 py-2 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition">
+                        Donar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Botón móvil -->
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none z-50 relative">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Overlay + Menú móvil -->
+        <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+        <nav id="mobile-menu"
+            class="hidden fixed inset-0 backdrop-blur-md text-white flex flex-col items-center justify-center space-y-8 z-50">
+
+            <!-- Enlaces -->
+            <a href="#inicio" class="hover:text-accent-500">Inicio</a>
+            <a href="#nosotros" class="hover:text-accent-500">Nosotros</a>
+            <a href="#programas" class="hover:text-accent-500">Programas</a>
+            <a href="#memorias" class="hover:text-accent-500">Memorias</a>
+            <a href="#contacto" class="hover:text-accent-500">Contacto</a>
+            <a href="#donaciones"
+                class="px-6 py-3 bg-accent-500 rounded-full font-bold hover:bg-accent-600 transition ml-2">
+                Donar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+            </a>
+
+            <!-- Redes sociales -->
+            <div class="flex space-x-6 pt-6 text-2xl">
+                <a href="https://www.facebook.com/sinergiaporlainfanciaperu" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/sinergiaporlainfanciaperu/" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=51998705600" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- Botón Ir arriba -->
+    <button id="scrollTopBtn"
+        class="hidden fixed bottom-6 right-6 bg-accent-500 text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent-600 transition animate-bounce z-50">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Barra de progreso -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent-500 z-[9999]" style="width: 0%;"></div>
+
+
+    <!-- Hero -->
+    <section id="inicio"
+        class="min-h-screen hero-bg flex items-center justify-center text-neutral-50 text-center relative overflow-hidden">
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 animate-float">
+            <!-- H1 Hero -->
+            <h1 class="text-h1 font-bold mb-8 leading-tight reveal">Somos Sinergia</h1>
+
+            <!-- Subtítulo Hero -->
+            <p class="text-body opacity-95 max-w-3xl mx-auto leading-relaxed font-medium text-neutral-100 reveal">
+                Casa de Acogida "Rayitos de Luz"
+            </p>
+
+            <!-- Subtítulo Hero -->
+            <p class="text-body mb-12 opacity-95 max-w-3xl mx-auto leading-relaxed font-medium text-neutral-100 reveal">
+                Brindando amor, protección y oportunidades a niños en situación de calle.
+            </p>
+
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-12">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                    <div class="group transition reveal animate-delay-1">
+                        <h3 class="text-h3 font-bold mb-2">20</h3>
+                        <p class="text-body text-neutral-100 font-medium">Años de experiencia</p>
+                    </div>
+                    <div class="group transition reveal animate-delay-2">
+                        <h3 class="text-h3 font-bold mb-2">4</h3>
+                        <p class="text-body text-neutral-100 font-medium">Programas activos</p>
+                    </div>
+                    <div class="group transition reveal animate-delay-3">
+                        <h3 class="text-h3 font-bold mb-2">2005</h3>
+                        <p class="text-body text-neutral-100 font-medium">Año de fundación</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón CTA -->
+            <a href="#donaciones"
+                class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-5 px-10 rounded-full text-xl transition animate-float-glow">
+                Ayúdanos a Ayudar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+            </a>
+        </div>
+
+        <!-- Elemento flotante decorativo -->
+        <div
+            class="absolute bottom-20 right-8 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full animate-float blur-sm">
+        </div>
+    </section>
+
+
+    <!-- Testimonios -->
+    <section class="bg-primary-700 py-24 text-neutral-50 reveal">
+
+        <div class="max-w-5xl mx-auto px-6 text-center relative">
+            <!-- Comillas izquierda -->
+            <div class="absolute left-0 top-0 translate-y-2 text-accent-500 text-7xl font-bold opacity-80">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+
+            <!-- Texto -->
+            <p class="text-xl md:text-2xl font-semibold">
+                Todo niño ó niña merece crecer con amor y dignidad
+            </p>
+
+            <!-- Comillas derecha -->
+            <div class="absolute right-0 bottom-0 text-accent-500 text-7xl font-bold opacity-80">
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <!-- Autor -->
+            <div class="mt-6">
+                <p class="text-white font-medium">- Alessandra Donatelli</p>
+                <p class="text-white text-sm">Fundadora</p>
+            </div>
+
+            <!-- Paginador (opcional si tienes varios testimonios) -->
+            <div class="mt-6 flex justify-center space-x-2">
+                <span class="w-3 h-3 bg-blue-400 rounded-full"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="bg-neutral-900 flex">
+
+        <div class="w-full h-[500px] grid grid-cols-1 md:grid-cols-2 reveal">
+            <!-- Texto -->
+            <div class="flex flex-col justify-center p-12">
+                <h3 class="text-3xl font-bold text-neutral-800 mb-6">
+                    Acerca de <span class="text-primary-600">Sinergia por la Infancia</span>
+                </h3>
+                <p class="text-body text-paragraph leading-relaxed">
+                    Somos una organización de impacto social positivo, creada el 03 de junio del 2005,
+                    para ofrecer protección, atención y oportunidades a niños, niñas, adolescentes y jóvenes
+                    en situación de calle en Lima y Callao.
+                </p>
+            </div>
+
+            <!-- Imagen con borde redondeado a la izquierda -->
+            <div class="h-full">
+                <img src="src/nosotros.jpg" alt="Nuestra organización"
+                    class="w-full h-full object-cover rounded-l-[400px] shadow-lg">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Historia -->
+    <section id="acerca" class="bg-white flex">
+        <div class="w-full h-[500px] grid grid-cols-1 md:grid-cols-2 reveal">
+
+            <!-- Imagen con borde redondeado a la derecha (porque ahora está a la izquierda) -->
+            <div class="h-full">
+                <img src="src/nuestra-historia.jpg" alt="Nuestra organización"
+                    class="w-full h-full object-cover rounded-r-[400px] shadow-lg">
+            </div>
+
+            <!-- Texto -->
+            <div class="flex flex-col justify-center p-12">
+                <h3 class="text-3xl font-bold text-neutral-800 mb-6">
+                    Nuestra <span class="text-primary-600">Historia</span>
+                </h3>
+                <p class="text-body text-paragraph leading-relaxed">
+                    El 01 de octubre del 2005, abrimos por primera vez las puertas de nuestra Casa de Acogida “Rayitos
+                    de Luz”, donde brindamos atención residencial e integral a niños, niñas y adolescentes en situación
+                    de calle.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Misión -->
+    <section id="acerca" class="bg-neutral-900 flex">
+        <div class="w-full h-[500px] grid grid-cols-1 md:grid-cols-2 reveal">
+
+            <!-- Texto -->
+            <div class="flex flex-col justify-center p-12">
+                <h3 class="text-3xl font-bold text-neutral-800 mb-6">
+                    Nuestra <span class="text-primary-600">Misión</span>
+                </h3>
+                <p class="text-body text-paragraph leading-relaxed">
+                    Acompañar y brindar atención integral a niños, niñas, adolescentes y jóvenes en situación de calle
+                    de manera personalizada en un ambiente familiar.
+                </p>
+
+                <hr class="border-t-2 border-neutral-300 my-6">
+
+                <h3 class="text-3xl font-bold text-neutral-800 mb-6">
+                    Nuestra <span class="text-primary-600">Visión</span>
+                </h3>
+                <p class="text-body text-paragraph leading-relaxed">
+                    Al 2030 Sinergia por la Infancia es reconocida por contribuir a la mejora integral de las
+                    condiciones de vida de niños, niñas, adolescentes y jóvenes en situación de calle.
+                </p>
+            </div>
+
+            <!-- Imagen con borde redondeado a la izquierda -->
+            <div class="h-full">
+                <img src="src/nosotros.jpg" alt="Nuestra organización"
+                    class="w-full h-full object-cover rounded-l-[400px] shadow-lg">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Valores -->
+    <section class="bg-primary-700 py-24 text-neutral-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+
+            <!-- Título -->
+            <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Nuestros Valores</h3>
+
+            <!-- Íconos -->
+            <div class="flex flex-wrap justify-center gap-32 text-center">
+
+                <div class="group transition animate-delay-2 icon-pulse reveal">
+                    <p><i class="fa-solid fa-heart text-accent-500 text-2xl"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Amor</p>
+                </div>
+
+                <div class="group transition animate-delay-2 icon-pulse reveal">
+                    <p><i class="fa-solid fa-hand-holding-heart text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Empatía</p>
+                </div>
+
+                <div class="group transition animate-delay-2 icon-pulse reveal">
+                    <p><i class="fa-solid fa-handshake text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Respeto</p>
+                </div>
+
+                <div class="group transition animate-delay-2 icon-pulse reveal">
+                    <p><i class="fa-solid fa-book text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Responsabilidad</p>
+                </div>
+
+                <div class="group transition animate-delay-2 icon-pulse reveal">
+                    <p><i class="fa-solid fa-seedling text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Solidaridad</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Programas -->
+    <section id="programas" class="bg-white py-24 sm:py-24 ">
+        <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12">
+            <h3 class="text-3xl font-bold text-neutral-800 mb-4">Nuestros <span
+                    class="text-primary-600">Programas</span></h3>
+            <p class="text-body text-paragraph max-w-2xl mx-auto leading-relaxed">
+                Desarrollamos iniciativas que buscan transformar vidas, brindar oportunidades y acompañar a niños y
+                adolescentes en situación de vulnerabilidad.
+            </p>
+        </div>
+
+        <!-- Grid de programas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-[90%] lg:w-[75%] mx-auto">
+
+            <div class="relative overflow-hidden shadow-lg w-full max-w-sm h-[500px] bg-cover bg-center reveal"
+                style="background-image: url('src/programas/programa-1.jpg');">
+
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <!-- Texto encima -->
+                <div class="absolute bottom-0 p-6 text-white">
+                    <h3 class="text-xl font-bold mb-2">Acogimiento Residencial</h3>
+                    <p class="text-sm leading-relaxed">
+                        Brindamos acogimiento residencial, integral, profesional y personalizado a niños y adolescentes
+                        en situación de calle, dentro de un entorno familiar y afectivo, respetando su dignidad y
+                        autonomía.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden shadow-lg w-full max-w-sm h-[500px] bg-cover bg-center reveal"
+                style="background-image: url('src/programas/programa-2.jpg');">
+
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <!-- Texto encima -->
+                <div class="absolute bottom-0 p-6 text-white">
+                    <h3 class="text-xl font-bold mb-2">Prevención con Familias</h3>
+                    <p class="text-sm leading-relaxed">
+                        Atención a niños, niñas y adolescentes en su ámbito familiar, favoreciendo acceso a educación,
+                        salud y servicios de cuidado para su desarrollo integral y fortalecimiento de factores de
+                        protección.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden shadow-lg w-full max-w-sm h-[500px] bg-cover bg-center reveal"
+                style="background-image: url('src/programas/programa-3.jpg');">
+
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <!-- Texto encima -->
+                <div class="absolute bottom-0 p-6 text-white">
+                    <h3 class="text-xl font-bold mb-2">Acompañamiento en Calle</h3>
+                    <p class="text-sm leading-relaxed">
+                        Brindamos acompañamiento y apoyo a niños, niñas y adolescentes en situación de calle,
+                        promoviendo sus derechos, vida saludable y acercamiento a alternativas que mejoren sus
+                        condiciones de vida.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative overflow-hidden shadow-lg w-full max-w-sm h-[500px] bg-cover bg-center reveal"
+                style="background-image: url('src/programas/programa-4.jpg');">
+
+                <!-- Overlay oscuro -->
+                <div class="absolute inset-0 bg-black/40"></div>
+
+                <!-- Texto encima -->
+                <div class="absolute bottom-0 p-6 text-white">
+                    <h3 class="text-xl font-bold mb-2">Incidencia Política y Social</h3>
+                    <p class="text-sm leading-relaxed">
+                        Impulsamos acciones de sensibilización y denuncia que abogan por cambios en las políticas
+                        públicas para atender las necesidades estructurales de los niños en situación de calle.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Galería de Memorias -->
+    <section id="memorias" class="py-16 sm:py-24 bg-neutral-900 hidden">
+        <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12 sm:mb-16 mt-20 sm:mt-32">
+            <!-- Título sección -->
+            <h2 class="text-h2 font-bold text-neutral-800 mb-4">Galería de Memorias</h2>
+            <p class="text-body text-paragraph max-w-2xl mx-auto leading-relaxed">
+                Momentos que reflejan nuestro compromiso con los niños, niñas y adolescentes.
+            </p>
+        </div>
+
+        <!-- Grid tipo Masonry -->
+        <div class="w-[90%] lg:w-[75%] mx-auto columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+
+            <!-- Imagen 1 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(0)">
+                <img src="src/galeria/gallery-1.jpg" alt="Galería 1"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 2 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(1)">
+                <img src="src/galeria/gallery-2.jpg" alt="Galería 2"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 3 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(2)">
+                <img src="src/galeria/gallery-3.jpg" alt="Galería 3"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 4 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(3)">
+                <img src="src/galeria/gallery-4.jpg" alt="Galería 4"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 5 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(4)">
+                <img src="src/galeria/gallery-5.jpg" alt="Galería 5"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 6 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(5)">
+                <img src="src/galeria/gallery-6.jpg" alt="Galería 6"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 7 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(6)">
+                <img src="src/galeria/gallery-7.jpg" alt="Galería 7"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+
+            <!-- Imagen 8 -->
+            <div class="relative group cursor-pointer reveal" onclick="openModal(7)">
+                <img src="src/galeria/gallery-8.jpg" alt="Galería 8"
+                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal de galería -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-4">
+        <!-- Botón cerrar -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent-500">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Imagen -->
+        <img id="modalImage" src="" alt="Imagen ampliada"
+            class="max-h-[80vh] max-w-full sm:max-w-[90%] rounded-lg shadow-xl object-contain">
+
+        <!-- Controles -->
+        <button onclick="prevImage()" class="absolute left-4 sm:left-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextImage()" class="absolute right-4 sm:right-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="imageModal"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full mx-4 overflow-hidden shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="text-xl font-bold text-paragraph" id="modalTitle">Imagen de la galería</h3>
+                <button onclick="closeModal()"
+                    class="text-gray-500 hover:text-gray-700 text-3xl font-bold transition-colors">&times;</button>
+            </div>
+            <div class="p-8 text-center">
+                <img id="modalImage" src="" alt="" class="w-full max-h-96 object-contain rounded-xl shadow-lg">
+                <p class="text-lg text-paragraph mt-4" id="modalContent">Descripción de la imagen</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donaciones -->
+    <section id="donaciones" class="bg-neutral-900 py-24 sm:py-24 ">
+        <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12">
+            <!-- Título -->
+            <h3 class="text-3xl font-bold mb-4 text-neutral-800">Haz la <span class="text-primary-600">Diferencia</span>
+            </h3>
+            <p class="text-body text-paragraph max-w-2xl mx-auto">
+                Tu aporte transforma vidas. Elige el medio que más te acomode y súmate a nuestra misión.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 w-[90%] lg:w-[75%] mx-auto mb-16">
+
+            <!-- Transferencia bancaria -->
+            <div
+                class="bg-primary-700 py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal">
+                <img src="src/bcp-logo.png" class="w-20 mx-auto mb-4" alt="BCP">
+                <h3 class="text-2xl font-semibold mb-4">Transferencia Bancaria</h3>
+                <p class="text-small">BCP - SINERGIA POR LA INFANCIA</p>
+                <div class="mt-4 space-y-1 text-small">
+                    <p><strong>Cuenta:</strong> 1941895118004</p>
+                    <p><strong>CCI:</strong> 00219400189511800493</p>
+                    <p><strong>RUC:</strong> 20511555991</p>
+                </div>
+                <button onclick="copyText('00219400189511800493')"
+                    class="mt-4 bg-blue-700 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-small sm:text-body hover-float transition">
+                    <i class="fa-solid fa-copy mr-2 icon-pulse"></i> Copiar CCI
+                </button>
+            </div>
+
+            <!-- Yape -->
+            <div
+                class="bg-primary-700 py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal">
+                <img src="src/yape-logo.png" class="w-20 mx-auto mb-4" alt="Yape">
+                <h3 class="text-2xl font-semibold mb-4">Yape</h3>
+                <p class="text-small">Número: <strong>998705600</strong></p>
+                <div class="mt-4">
+                    <img src="src/qr-yape.jpg"
+                        class="w-32 h-32 mx-auto bg-white p-2 rounded cursor-pointer hover:scale-110 hover-float transition"
+                        alt="QR Yape" onclick="openQR('Yape - 998705600', this.src)">
+                    <p class="mt-2 text-small">Escanea o copia el número</p>
+                    <button onclick="copyText('998705600')"
+                        class="mt-4 w-full bg-accent-500 hover:bg-accent-600 text-white rounded-lg py-2 hover-float transition text-small sm:text-body">
+                        <i class="fa-solid fa-copy mr-2 icon-pulse"></i> Copiar Número
+                    </button>
+                </div>
+            </div>
+
+            <!-- PayPal -->
+            <div
+                class="bg-primary-700 py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal">
+                <img src="src/paypal-logo.png" class="w-20 mx-auto mb-4" alt="PayPal">
+                <h3 class="text-2xl font-semibold mb-4">PayPal</h3>
+                <p class="text-small mb-4">Haz tu donación de forma rápida y segura usando PayPal.</p>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=ZRC2G8KXZPKDU" target="_blank"
+                    class="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-lg shadow-md hover-float transition text-small sm:text-body">
+                    Donar con PayPal<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Donaciones en especie -->
+            <div
+                class="bg-primary-700 py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal">
+
+                <div class="bg-white rounded-xl p-2 w-fit mx-auto mb-6">
+                    <i class="fa-solid fa-gifts text-5xl text-accent-500 p-2"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">En Especie</h3>
+                <p class="mb-3 text-small">Puedes donar directamente artículos:</p>
+                <ul class="space-y-2 text-small text-left inline-block mx-auto ">
+                    <li class="icon-pulse"><i class="fa-solid fa-shirt mr-2"></i> Ropa y zapatos</li>
+                    <li class="icon-pulse"><i class="fa-solid fa-book mr-2"></i> Útiles escolares</li>
+                    <li class="icon-pulse"><i class="fa-solid fa-mug-hot mr-2"></i> Alimentos</li>
+                    <li class="icon-pulse"><i class="fa-solid fa-robot mr-2"></i> Juguetes y libros</li>
+                    <li class="icon-pulse"><i class="fa-solid fa-gift mr-2"></i> Otros en buen estado</li>
+                </ul>
+                <a href="https://api.whatsapp.com/send?phone=51998705600&text=Hola%2C+quiero+apoyar+a+Sinergia+por+la+Infancia"
+                    target="_blank" rel="noopener noreferrer"
+                    class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow-md hover-float transition text-small sm:text-body">
+                    <i class="fa-brands fa-whatsapp"></i> Contactar
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Modal QR -->
+    <div id="qrModal" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+            <h3 id="qrTitle" class="text-lg font-bold mb-4 text-neutral-800"></h3>
+            <img id="qrImage" src="" alt="QR ampliado" class="w-64 h-64 mx-auto rounded border p-2 bg-white">
+            <button onclick="closeQR()"
+                class="mt-6 bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- Contacto -->
+    <section id="contacto" class="bg-neutral-100 py-24">
+        <div class="w-[90%] lg:w-[75%] mx-auto mt-32">
+            <!-- Título -->
+            <h2 class="text-h2 md:text-5xl font-bold text-center mb-16 text-neutral-800">Contáctanos</h2>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+
+                <!-- Información -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-h3 font-bold mb-4 flex items-center text-neutral-800">
+                            <i class="fa-solid fa-circle-info mr-3 text-accent-500"></i> Información
+                        </h3>
+                        <ul class="space-y-3 text-body text-paragraph">
+                            <li><i class="fa-solid fa-location-dot mr-2 text-primary-600"></i> PARCELA F-4 SUB LOTE A-2
+                                NRO. S/N SECTOR EL OLIVAR</li>
+                            <li><i class="fa-solid fa-phone mr-2 text-primary-600"></i> 01 4680405</li>
+                            <li><i class="fa-solid fa-mobile-screen-button mr-2 text-primary-600"></i> (+51) 998-705-600
+                            </li>
+                            <li><i class="fa-solid fa-envelope mr-2 text-primary-600"></i> info@sinergiainfancia.org
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-h3 font-bold mb-4 flex items-center text-neutral-800">
+                            <i class="fa-solid fa-share-nodes mr-3 text-accent-500"></i> Redes Sociales
+                        </h3>
+                        <div class="flex space-x-4 text-2xl">
+                            <a href="https://www.facebook.com/sinergiaporlainfanciaperu" target="_blank"
+                                class="hover:text-primary-600">
+                                <i class="fa-brands fa-facebook icon-pulse"></i>
+                            </a>
+                            <a href="https://www.instagram.com/sinergiaporlainfanciaperu/" target="_blank"
+                                class="hover:text-primary-600">
+                                <i class="fa-brands fa-instagram icon-pulse"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=51998705600" target="_blank"
+                                class="hover:text-primary-600">
+                                <i class="fa-brands fa-whatsapp icon-pulse"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-neutral-200">
+                    <h3 class="text-h3 font-bold mb-6 flex items-center text-neutral-800">
+                        <i class="fa-solid fa-paper-plane mr-3 text-accent-500"></i> Envíanos un Mensaje
+                    </h3>
+
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" id="name" name="name" placeholder="Nombre completo" required
+                                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-primary-600 focus:ring-2 focus:ring-primary-200 transition text-body">
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico" required
+                                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-primary-600 focus:ring-2 focus:ring-primary-200 transition text-body">
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="tel" id="phone" name="phone" placeholder="Teléfono"
+                                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-primary-600 focus:ring-2 focus:ring-primary-200 transition text-body">
+                            <input type="text" id="subject" name="subject" placeholder="Asunto" required
+                                class="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-primary-600 focus:ring-2 focus:ring-primary-200 transition text-body">
+                        </div>
+                        <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required
+                            class="w-full px-4 py-3 border-2 border-neutral-200 rounded-xl focus:border-primary-600 focus:ring-2 focus:ring-primary-200 transition resize-none text-body"></textarea>
+                        <button type="submit"
+                            class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-8 rounded-xl transition text-body">
+                            Enviar
+                        </button>
+                    </form>
+
+                    <!-- Mensaje dinámico -->
+                    <div id="formMessage" class="hidden mt-4 text-center text-small font-bold"></div>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="mt-16 rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.2025223693604!2d-76.88028482493583!3d-12.234562388017137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bd2b18b8b6b3%3A0x7bcfe74295c6655d!2sSinergia%20Por%20La%20Infancia!5e0!3m2!1ses-419!2spe!4v1758306124652!5m2!1ses-419!2spe"
+                    class="w-full h-80 border-0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-primary-700 text-neutral-50 pt-16 pb-8">
+        <div class="w-[90%] lg:w-[75%] mx-auto grid md:grid-cols-4 gap-12">
+
+            <!-- Logo + frase -->
+            <div class="space-y-4">
+                <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-16 md:h-24">
+                <p class="text-small text-neutral-300">
+                    Desde 2005 brindando amor, protección y oportunidades a niños, niñas y adolescentes en situación de
+                    calle.
+                </p>
+            </div>
+
+            <!-- Enlaces rápidos -->
+            <div>
+                <h3 class="text-h3 font-semibold text-white mb-4">Enlaces</h3>
+                <ul class="space-y-2">
+                    <li><a href="#inicio" class="text-small hover:text-accent-500 transition">Inicio</a></li>
+                    <li><a href="#nosotros" class="text-small hover:text-accent-500 transition">Nosotros</a></li>
+                    <li><a href="#programas" class="text-small hover:text-accent-500 transition">Programas</a></li>
+                    <li><a href="#memorias" class="text-small hover:text-accent-500 transition">Memorias</a></li>
+                    <li><a href="#donaciones" class="text-small hover:text-accent-500 transition">Donaciones</a></li>
+                    <li><a href="#contacto" class="text-small hover:text-accent-500 transition">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Contacto -->
+            <div>
+                <h3 class="text-h3 font-semibold text-white mb-4">Contacto</h3>
+                <ul class="space-y-2 text-small">
+                    <li><i class="fa-solid fa-location-dot mr-2 text-accent-500"></i> PARCELA F-4, SECTOR EL OLIVAR</li>
+                    <li><i class="fa-solid fa-phone mr-2 text-accent-500"></i> 01 4680405</li>
+                    <li><i class="fa-solid fa-mobile-screen-button mr-2 text-accent-500"></i> (+51) 998-705-600</li>
+                    <li><i class="fa-solid fa-envelope mr-2 text-accent-500"></i> info@sinergiainfancia.org</li>
+                </ul>
+            </div>
+
+            <!-- Redes sociales -->
+            <div>
+                <h3 class="text-h3 font-semibold text-white mb-4">Síguenos</h3>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="https://www.facebook.com/sinergiaporlainfanciaperu" target="_blank"
+                        class="hover:text-accent-500 transition"><i class="fa-brands fa-facebook icon-pulse"></i></a>
+                    <a href="https://www.instagram.com/sinergiaporlainfanciaperu/" target="_blank"
+                        class="hover:text-accent-500 transition"><i class="fa-brands fa-instagram icon-pulse"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=51998705600" target="_blank"
+                        class="hover:text-accent-500 transition"><i class="fa-brands fa-whatsapp icon-pulse"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Separador -->
+        <div class="border-t border-neutral-700 mt-12 pt-6 text-center">
+            <p class="text-small text-neutral-400">
+                &copy; 2025 Sinergia por la Infancia. Todos los derechos reservados. ❤️
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script>
+
+        window.addEventListener("scroll", () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById("scroll-progress").style.width = progress + "%";
+        });
+
+        const scrollBtn = document.getElementById("scrollTopBtn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.remove("hidden");
+            } else {
+                scrollBtn.classList.add("hidden");
+            }
+        });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // ============================
+        // Toggle menú móvil con overlay
+        // ============================
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const overlay = document.getElementById("mobile-overlay");
+
+        menuBtn.addEventListener("click", () => {
+            // Scroll al inicio al abrir menú en móvil
+            //window.scrollTo({ top: 0, behavior: "smooth" });
+
+            // Mostrar/ocultar menú
+            mobileMenu.classList.toggle("hidden");
+            overlay.classList.toggle("hidden");
+
+            // Cambiar ícono
+            const icon = menuBtn.querySelector("i");
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+        });
+
+        // Cerrar menú al hacer clic en enlace u overlay
+        document.querySelectorAll("#mobile-menu a, #mobile-overlay").forEach(el => {
+            el.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                overlay.classList.add("hidden");
+
+                const icon = menuBtn.querySelector("i");
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-xmark");
+            });
+        });
+
+        // ============================
+        // Galería de imágenes
+        // ============================
+        const images = [
+            "src/galeria/gallery-1.jpg",
+            "src/galeria/gallery-2.jpg",
+            "src/galeria/gallery-3.jpg",
+            "src/galeria/gallery-4.jpg",
+            "src/galeria/gallery-5.jpg",
+            "src/galeria/gallery-6.jpg",
+            "src/galeria/gallery-7.jpg",
+            "src/galeria/gallery-8.jpg"
+        ];
+        let currentIndex = 0;
+
+        function openModal(index) {
+            currentIndex = index;
+            const modal = document.getElementById("galleryModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.classList.remove("hidden");
+            modalImg.src = images[currentIndex];
+        }
+
+        function closeModal() {
+            document.getElementById("galleryModal").classList.add("hidden");
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("modalImage").src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("modalImage").src = images[currentIndex];
+        }
+
+        // Navegación con teclado
+        document.addEventListener("keydown", (e) => {
+            if (document.getElementById("galleryModal").classList.contains("hidden")) return;
+            if (e.key === "ArrowRight") nextImage();
+            if (e.key === "ArrowLeft") prevImage();
+            if (e.key === "Escape") closeModal();
+        });
+
+        // ============================
+        // Copiar texto al portapapeles
+        // ============================
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("✅ Copiado al portapapeles: " + text);
+            });
+        }
+
+        // ============================
+        // Modal QR
+        // ============================
+        function openQR(title, src) {
+            document.getElementById("qrTitle").innerText = title;
+            document.getElementById("qrImage").src = src;
+            document.getElementById("qrModal").classList.remove("hidden");
+        }
+
+        function closeQR() {
+            document.getElementById("qrModal").classList.add("hidden");
+        }
+
+        // ============================
+        // Formulario de contacto
+        // ============================
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const messageBox = document.getElementById("formMessage");
+            let isValid = true;
+
+            // Validación simple
+            form.querySelectorAll("input[required], textarea[required]").forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.remove("border-neutral-200", "focus:border-primary-600");
+                    input.classList.add("border-red-500", "focus:border-red-500", "focus:ring-red-200");
+                    isValid = false;
+                } else {
+                    input.classList.remove("border-red-500", "focus:border-red-500", "focus:ring-red-200");
+                    input.classList.add("border-neutral-200", "focus:border-primary-600", "focus:ring-primary-200");
+                }
+            });
+
+            if (!isValid) {
+                messageBox.textContent = "❌ Por favor completa los campos obligatorios.";
+                messageBox.className = "mt-4 text-center text-red-600 font-bold";
+                messageBox.classList.remove("hidden");
+                return;
+            }
+
+            // Simulación de envío
+            setTimeout(() => {
+                messageBox.textContent = "✅ ¡Gracias! Tu mensaje fue enviado correctamente.";
+                messageBox.className = "mt-4 text-center text-green-600 font-bold";
+                messageBox.classList.remove("hidden");
+                form.reset();
+            }, 800);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-fade-in-up");
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    </script>
+
+</body>
+
+</html>
