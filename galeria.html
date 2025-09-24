@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Sinergia por la Infancia</title>
+    <meta name="description"
+        content="Explora nuestra galería de fotos en Sinergia por la Infancia. Momentos únicos que reflejan nuestro compromiso.">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#0284c7', /* azul principal: usado en botones, iconos, enlaces destacados */
+                            600: '#0369a1', /* azul más oscuro: hover en botones o enlaces */
+                            700: '#0c4a6e'  /* azul fuerte: fondos sólidos, header, secciones clave */
+                        },
+                        accent: {
+                            500: '#ec4899', /* rosa vibrante: CTA principal (donar, ayudar) */
+                            600: '#db2777'  /* rosa intenso: hover en botones de acción */
+                        },
+                        neutral: {
+                            50: '#f9fafb',  /* gris casi blanco: fondos claros */
+                            100: '#f3f4f6', /* gris suave: tarjetas, contenedores secundarios */
+                            800: '#1f2937', /* gris oscuro: títulos principales, textos fuertes */
+                            900: '#EFEFEF'  /* gris más intenso: fondos oscuros, footer, textos muy contrastados */
+                        },
+                        paragraph: '#4b5563' /* gris medio: texto de párrafos, buena legibilidad */
+
+                    },
+                    fontSize: {
+                        'h1': '4rem',      // Hero title
+                        'h2': '2.5rem',    // Section titles
+                        'h3': '1.5rem',    // Subtitles
+                        'body': '1.125rem',// Main text
+                        'small': '0.875rem'// Secondary text
+                    },
+                    animation: {
+                        'float': 'float 2s ease-in-out infinite',
+                        'pulseGlow': 'pulseGlow 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif !important;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1.2s ease forwards;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(12, 74, 110, 0.7), rgba(17, 24, 39, 0.7)),
+                url("src/fondo.jpg") no-repeat center center / cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(12, 74, 110, 0.6));
+            z-index: 0;
+        }
+
+        .hero-bg>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+    </style>
+
+</head>
+
+<body class="bg-neutral-50 text-neutral-900">
+
+    <!-- Header -->
+    <header class="fixed top-5 left-0 w-full z-50">
+        <div class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#inicio">
+                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-12 sm:h-16 lg:h-20">
+                    </a>
+                </div>
+
+                <!-- Links desktop -->
+                <div class="hidden md:flex space-x-10 font-semibold text-neutral-50 text-sm lg:text-base">
+                    <a href="index.html#inicio" class="relative group">Inicio
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#nosotros" class="relative group">Nosotros
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#programas" class="relative group">Programas
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="galeria.html" class="relative group">Memorias
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#contacto" class="relative group">Contacto
+                        <span
+                            class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Botón Donar desktop -->
+                <div class="hidden md:flex">
+                    <a href="#donaciones"
+                        class="px-4 py-2 bg-accent-500 text-white rounded-full hover:bg-accent-600 transition text-sm lg:text-base">
+                        Donar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Botón móvil -->
+                <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none z-50 relative">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Overlay + Menú móvil (slide in) -->
+        <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+        <nav id="mobile-menu"
+            class="hidden fixed inset-0 backdrop-blur-md text-white flex flex-col items-center justify-center space-y-8 z-50">
+            <a href="#inicio" class="hover:text-accent-500">Inicio</a>
+            <a href="#nosotros" class="hover:text-accent-500">Nosotros</a>
+            <a href="#programas" class="hover:text-accent-500">Programas</a>
+            <a href="#memorias" class="hover:text-accent-500">Memorias</a>
+            <a href="#contacto" class="hover:text-accent-500">Contacto</a>
+            <a href="#donaciones"
+                class="px-6 py-3 bg-accent-500 rounded-full font-bold hover:bg-accent-600 transition ml-2">
+                Donar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
+            </a>
+            <!-- Redes sociales -->
+            <div class="flex space-x-6 pt-6 text-2xl">
+                <a href="https://www.facebook.com/sinergiaporlainfanciaperu" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/sinergiaporlainfanciaperu/" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=51998705600" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Botón Ir arriba -->
+    <button id="scrollTopBtn"
+        class="hidden fixed bottom-6 right-6 bg-accent-500 text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent-600 transition animate-bounce z-50">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+
+    <!-- Barra de progreso -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent-500 z-[9999]" style="width: 0%;"></div>
+
+    <!-- Hero -->
+    <section class="hero-bg flex items-center justify-center text-center min-h-[50vh] relative text-white">
+        <div class="z-10 px-6">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold animate-fade-in-up">Nuestra Galería</h1>
+            <p class="text-base sm:text-lg lg:text-xl mt-4 animate-fade-in-up">
+                Momentos que cuentan nuestra historia y misión
+            </p>
+        </div>
+    </section>
+
+    <!-- Galería tipo Masonry -->
+    <section class="py-16 bg-neutral-50">
+        <div class="w-[90%] lg:w-[80%] mx-auto columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(0)">
+                <img src="src/galeria/gallery-1.jpg" alt="Galería 1" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(1)">
+                <img src="src/galeria/gallery-2.jpg" alt="Galería 2" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(2)">
+                <img src="src/galeria/gallery-3.jpg" alt="Galería 3" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(3)">
+                <img src="src/galeria/gallery-4.jpg" alt="Galería 4" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(4)">
+                <img src="src/galeria/gallery-5.jpg" alt="Galería 5" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(5)">
+                <img src="src/galeria/gallery-6.jpg" alt="Galería 6" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(6)">
+                <img src="src/galeria/gallery-7.jpg" alt="Galería 7" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(7)">
+                <img src="src/galeria/gallery-8.jpg" alt="Galería 8" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(8)">
+                <img src="src/galeria/gallery-9.jpg" alt="Galería 9" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(9)">
+                <img src="src/galeria/gallery-10.jpg" alt="Galería 10" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(10)">
+                <img src="src/galeria/gallery-11.jpg" alt="Galería 11" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(11)">
+                <img src="src/galeria/gallery-12.jpg" alt="Galería 12" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(12)">
+                <img src="src/galeria/gallery-13.jpg" alt="Galería 13" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(13)">
+                <img src="src/galeria/gallery-14.jpg" alt="Galería 14" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(14)">
+                <img src="src/galeria/gallery-15.jpg" alt="Galería 15" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(15)">
+                <img src="src/galeria/gallery-16.jpg" alt="Galería 16" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(16)">
+                <img src="src/galeria/gallery-17.jpg" alt="Galería 17" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(17)">
+                <img src="src/galeria/gallery-18.jpg" alt="Galería 18" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(18)">
+                <img src="src/galeria/gallery-19.jpg" alt="Galería 19" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer reveal break-inside-avoid" onclick="openModal(19)">
+                <img src="src/galeria/gallery-20.jpg" alt="Galería 20" loading="lazy"
+                    class="w-full shadow-md group-hover:scale-105 group-hover:shadow-xl transition duration-500 object-cover">
+                <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center rounded-xl">
+                    <i class="fa-solid fa-magnifying-glass text-white text-3xl"></i>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-4">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent-500">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="modalImage" src="" alt="Imagen ampliada"
+            class="max-h-[80vh] max-w-full sm:max-w-[90%] rounded-lg shadow-xl object-contain">
+        <button onclick="prevImage()" class="absolute left-4 sm:left-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextImage()" class="absolute right-4 sm:right-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+</body>
+
+<script src="app.js"></script>
+
+</html>

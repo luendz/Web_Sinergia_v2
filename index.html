@@ -32,6 +32,7 @@
     <!-- Font Awesome 6.5.1 desde CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
     <script>
         tailwind.config = {
             theme: {
@@ -249,7 +250,7 @@
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="#memorias" class="relative group">Memorias
+                    <a href="galeria.html" class="relative group">Memorias
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -277,7 +278,7 @@
         <!-- Overlay + Menú móvil (slide in) -->
         <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
         <nav id="mobile-menu"
-            class="hidden fixed inset-y-0 right-0 w-3/4 max-w-sm bg-primary-700 backdrop-blur-md text-white flex flex-col items-center justify-center space-y-8 z-50 transform translate-x-full transition-transform duration-300">
+            class="hidden fixed inset-0 backdrop-blur-md text-white flex flex-col items-center justify-center space-y-8 z-50">
             <a href="#inicio" class="hover:text-accent-500">Inicio</a>
             <a href="#nosotros" class="hover:text-accent-500">Nosotros</a>
             <a href="#programas" class="hover:text-accent-500">Programas</a>
@@ -287,9 +288,23 @@
                 class="px-6 py-3 bg-accent-500 rounded-full font-bold hover:bg-accent-600 transition ml-2">
                 Donar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
             </a>
+            <!-- Redes sociales -->
+            <div class="flex space-x-6 pt-6 text-2xl">
+                <a href="https://www.facebook.com/sinergiaporlainfanciaperu" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/sinergiaporlainfanciaperu/" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=51998705600" target="_blank"
+                    class="hover:text-accent-500 transition">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
         </nav>
     </header>
-
 
 
     <!-- Botón Ir arriba -->
@@ -936,181 +951,8 @@
         </div>
     </footer>
 
-
-    <!-- Scripts -->
-    <script>
-
-        window.addEventListener("scroll", () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrollTop / docHeight) * 100;
-            document.getElementById("scroll-progress").style.width = progress + "%";
-        });
-
-        const scrollBtn = document.getElementById("scrollTopBtn");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 400) {
-                scrollBtn.classList.remove("hidden");
-            } else {
-                scrollBtn.classList.add("hidden");
-            }
-        });
-
-        scrollBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        // ============================
-        // Toggle menú móvil con overlay
-        // ============================
-        const menuBtn = document.getElementById("menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const overlay = document.getElementById("mobile-overlay");
-
-        menuBtn.addEventListener("click", () => {
-            // Scroll al inicio al abrir menú en móvil
-            //window.scrollTo({ top: 0, behavior: "smooth" });
-
-            // Mostrar/ocultar menú
-            mobileMenu.classList.toggle("hidden");
-            overlay.classList.toggle("hidden");
-
-            // Cambiar ícono
-            const icon = menuBtn.querySelector("i");
-            icon.classList.toggle("fa-bars");
-            icon.classList.toggle("fa-xmark");
-        });
-
-        // Cerrar menú al hacer clic en enlace u overlay
-        document.querySelectorAll("#mobile-menu a, #mobile-overlay").forEach(el => {
-            el.addEventListener("click", () => {
-                mobileMenu.classList.add("hidden");
-                overlay.classList.add("hidden");
-
-                const icon = menuBtn.querySelector("i");
-                icon.classList.add("fa-bars");
-                icon.classList.remove("fa-xmark");
-            });
-        });
-
-        // ============================
-        // Galería de imágenes
-        // ============================
-        const images = [
-            "src/galeria/gallery-1.jpg",
-            "src/galeria/gallery-2.jpg",
-            "src/galeria/gallery-3.jpg",
-            "src/galeria/gallery-4.jpg",
-            "src/galeria/gallery-5.jpg",
-            "src/galeria/gallery-6.jpg",
-            "src/galeria/gallery-7.jpg",
-            "src/galeria/gallery-8.jpg"
-        ];
-        let currentIndex = 0;
-
-        function openModal(index) {
-            currentIndex = index;
-            const modal = document.getElementById("galleryModal");
-            const modalImg = document.getElementById("modalImage");
-            modal.classList.remove("hidden");
-            modalImg.src = images[currentIndex];
-        }
-
-        function closeModal() {
-            document.getElementById("galleryModal").classList.add("hidden");
-        }
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("modalImage").src = images[currentIndex];
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("modalImage").src = images[currentIndex];
-        }
-
-        // Navegación con teclado
-        document.addEventListener("keydown", (e) => {
-            if (document.getElementById("galleryModal").classList.contains("hidden")) return;
-            if (e.key === "ArrowRight") nextImage();
-            if (e.key === "ArrowLeft") prevImage();
-            if (e.key === "Escape") closeModal();
-        });
-
-        // ============================
-        // Copiar texto al portapapeles
-        // ============================
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("✅ Copiado al portapapeles: " + text);
-            });
-        }
-
-        // ============================
-        // Modal QR
-        // ============================
-        function openQR(title, src) {
-            document.getElementById("qrTitle").innerText = title;
-            document.getElementById("qrImage").src = src;
-            document.getElementById("qrModal").classList.remove("hidden");
-        }
-
-        function closeQR() {
-            document.getElementById("qrModal").classList.add("hidden");
-        }
-
-        // ============================
-        // Formulario de contacto
-        // ============================
-        document.getElementById("contactForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const messageBox = document.getElementById("formMessage");
-            let isValid = true;
-
-            // Validación simple
-            form.querySelectorAll("input[required], textarea[required]").forEach(input => {
-                if (!input.value.trim()) {
-                    input.classList.remove("border-neutral-200", "focus:border-primary-600");
-                    input.classList.add("border-red-500", "focus:border-red-500", "focus:ring-red-200");
-                    isValid = false;
-                } else {
-                    input.classList.remove("border-red-500", "focus:border-red-500", "focus:ring-red-200");
-                    input.classList.add("border-neutral-200", "focus:border-primary-600", "focus:ring-primary-200");
-                }
-            });
-
-            if (!isValid) {
-                messageBox.textContent = "❌ Por favor completa los campos obligatorios.";
-                messageBox.className = "mt-4 text-center text-red-600 font-bold";
-                messageBox.classList.remove("hidden");
-                return;
-            }
-
-            // Simulación de envío
-            setTimeout(() => {
-                messageBox.textContent = "✅ ¡Gracias! Tu mensaje fue enviado correctamente.";
-                messageBox.className = "mt-4 text-center text-green-600 font-bold";
-                messageBox.classList.remove("hidden");
-                form.reset();
-            }, 800);
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("animate-fade-in-up");
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-    </script>
-
 </body>
+
+<script src="app.js"></script>
 
 </html>
