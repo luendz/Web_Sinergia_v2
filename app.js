@@ -1,4 +1,24 @@
 // ============================
+// Efecto scroll en Header
+// Agrega bordes cuando el usuario hace scroll para diferenciarlo del resto
+// ============================
+
+const header = document.getElementById("main-header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    // Cuando se baja más de 50px: activa los bordes
+    header.classList.add("border-l-2");
+    header.classList.add("border-b-2", "border-primary-600");
+  } else {
+    // Cuando se vuelve al inicio: quita los bordes
+    header.classList.remove("border-l-2");
+    header.classList.remove("border-b-2", "border-primary-600");
+  }
+
+});
+
+// ============================
 // Contador animado en números (Ease-Out)
 // ============================
 document.addEventListener("DOMContentLoaded", () => {

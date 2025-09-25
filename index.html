@@ -172,10 +172,7 @@
         .hero-bg {
             background:
                 linear-gradient(rgba(12, 74, 110, 0.7), rgba(17, 24, 39, 0.7)),
-                /* degradado azul oscuro */
                 url('src/fondo.jpg') no-repeat center center / cover;
-            background-attachment: fixed;
-            animation: heroPan 20s infinite linear alternate;
         }
 
         .hero-bg::before {
@@ -227,14 +224,14 @@
 <body class="overflow-x-hidden overflow-x-hidden bg-neutral-50 text-neutral-900">
 
     <!-- Header -->
-    <header class="fixed top-5 left-0 w-full z-50">
-        <div class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md">
+    <header class="fixed top-5 left-0 w-full z-50 transition-all duration-300">
+        <div  id="main-header"  class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md shadow-none transition-all duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
 
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="#inicio">
-                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-12 sm:h-16 lg:h-20">
+                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-20 sm:h-24 lg:h-24">
                     </a>
                 </div>
 
