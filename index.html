@@ -172,7 +172,10 @@
         .hero-bg {
             background:
                 linear-gradient(rgba(12, 74, 110, 0.7), rgba(17, 24, 39, 0.7)),
-                url('src/fondo.jpg') no-repeat center center / cover;
+                url('src/fondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .hero-bg::before {
@@ -225,7 +228,8 @@
 
     <!-- Header -->
     <header class="fixed top-5 left-0 w-full z-50 transition-all duration-300">
-        <div  id="main-header"  class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md shadow-none transition-all duration-300">
+        <div id="main-header"
+            class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md shadow-none transition-all duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
 
                 <!-- Logo -->
@@ -281,7 +285,7 @@
             <a href="#inicio" class="hover:text-accent-500">Inicio</a>
             <a href="#nosotros" class="hover:text-accent-500">Nosotros</a>
             <a href="#programas" class="hover:text-accent-500">Programas</a>
-            <a href="#memorias" class="hover:text-accent-500">Memorias</a>
+            <a href="galeria.html" class="hover:text-accent-500">Memorias</a>
             <a href="#contacto" class="hover:text-accent-500">Contacto</a>
             <a href="#donaciones"
                 class="px-6 py-3 bg-accent-500 rounded-full font-bold hover:bg-accent-600 transition ml-2">
@@ -417,7 +421,8 @@
             </div>
 
             <!-- Imagen con borde redondeado -->
-            <img src="src/nosotros.jpg" alt="Nuestra organización" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-l-[200px] md:rounded-l-[400px] ml-1">
+            <img src="src/nosotros.jpg" alt="Nuestra organización"
+                class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-l-[200px] md:rounded-l-[400px] ml-1">
 
         </div>
     </section>
@@ -428,7 +433,8 @@
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Imagen -->
-            <img src="src/nuestra-historia.jpg" alt="Nuestra organización" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-r-[200px] md:rounded-r-[400px] order-2 md:order-1">
+            <img src="src/nuestra-historia.jpg" alt="Nuestra organización"
+                class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-r-[200px] md:rounded-r-[400px] order-2 md:order-1">
 
             <!-- Texto -->
             <div class="flex flex-col justify-center p-12 order-1 md:order-2">
@@ -470,7 +476,8 @@
             </div>
 
             <!-- Imagen -->
-            <img src="src/nosotros.jpg" alt="Nuestra organización" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-l-[200px] md:rounded-l-[400px] ml-1">
+            <img src="src/nosotros.jpg" alt="Nuestra organización"
+                class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-l-[200px] md:rounded-l-[400px] ml-1">
         </div>
     </section>
 
