@@ -217,6 +217,10 @@
         .animate-delay-3 {
             animation-delay: 0.6s;
         }
+
+        .animate-delay-4 {
+            animation-delay: 0.8s;
+        }
     </style>
 </head>
 
@@ -341,19 +345,19 @@
             <!-- Info -->
             <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12">
                 <div class="grid grid-cols-1 sm:grid-cols-4 gap-8 text-center">
-                    <div class="">
+                    <div class="reveal animate-delay-1">
                         <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="20">20</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Años de experiencia</p>
                     </div>
-                    <div class="">
+                    <div class="reveal animate-delay-2">
                         <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="4">4</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Programas activos</p>
                     </div>
-                    <div class="">
+                    <div class="reveal animate-delay-3 ">
                         <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="2005">2005</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Año de fundación</p>
                     </div>
-                    <div class="reveal animate-delay-3">
+                    <div class="reveal animate-delay-4">
                         <h3 class="text-xl sm:text-2xl lg:text-h3 font-bold mb-2">Lima</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Callao</p>
                     </div>
@@ -361,7 +365,7 @@
             </div>
 
             <!-- Botón CTA -->
-            <a href="index.html#donaciones"
+            <a href="#donaciones"
                 class="inline-block bg-gradient-to-r from-accent-600/45 to-accent-600/80 hover:bg-accent-600 text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-full text-lg sm:text-xl transition">
                 Ayúdanos a Ayudar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
             </a>
@@ -403,7 +407,7 @@
 
 
     <!-- Nosotros -->
-    <section id="nosotros" class="flex w-[90%] lg:w-[80%] mx-auto py-16">
+    <section id="nosotros" class="flex w-[90%] lg:w-[80%] mx-auto py-10">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Texto -->
@@ -428,15 +432,15 @@
 
 
     <!-- Historia -->
-    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto ">
+    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Imagen -->
-            <img src="src/nuestra-historia.jpg" alt="Nuestra organización"
-                class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-r-[200px] md:rounded-r-[400px]">
+            <img src="src/nuestra-historia.jpg" alt="Nuestra organización" class="w-full aspect-[4/3] md:aspect-[16/9] object-cover rounded-r-[200px] md:rounded-r-[400px]
+             order-2 md:order-1">
 
             <!-- Texto -->
-            <div class="flex flex-col justify-center p-12">
+            <div class="flex flex-col justify-center p-12 order-1 md:order-2">
                 <h3 class="text-3xl font-bold text-neutral-800 mb-6">
                     Nuestra <span class="text-primary-600">Historia</span>
                 </h3>
@@ -450,7 +454,7 @@
     </section>
 
     <!-- Misión y Visión -->
-    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto ">
+    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto py-10">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Texto -->
@@ -482,37 +486,37 @@
 
 
     <!-- Valores -->
-    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+    <section class="bg-primary-700 py-12 text-neutral-50 w-full mx-auto">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
 
             <!-- Título -->
             <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Nuestros Valores</h3>
 
-            <!-- Íconos -->
-            <div class="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-32 text-center">
+            <!-- Íconos en grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 text-center">
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-heart text-accent-500 text-2xl"></i></p>
+                    <p><i class="fa-solid fa-heart text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Amor</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-hand-holding-heart text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-hand-holding-heart text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Empatía</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-handshake text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-handshake text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Respeto</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-book text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-book text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Responsabilidad</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-seedling text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-seedling text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Solidaridad</p>
                 </div>
 
@@ -523,6 +527,7 @@
 
     <!-- Programas -->
     <section id="programas" class="py-24 sm:py-24 ">
+
         <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12">
             <h3 class="text-3xl font-bold text-neutral-800 mb-4">Nuestros <span
                     class="text-primary-600">Programas</span></h3>
@@ -602,36 +607,37 @@
             </div>
 
         </div>
+        
     </section>
 
 
     <!-- Unete -->
-    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+    <section class="bg-primary-700 py-12 text-neutral-50 w-full mx-auto">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
 
             <!-- Título -->
             <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Únete a Nuestra Familia</h3>
 
-            <!-- Íconos -->
-            <div class="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-32 text-center">
+            <!-- Íconos en grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-bullhorn text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-bullhorn text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Difunde Nuestra Misión</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-people-carry-box text-accent-500 text-2xl"></i></p>
+                    <p><i class="fa-solid fa-people-carry-box text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Apóyanos</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-handshake-angle text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-handshake-angle text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Voluntariado</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-box-open text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-box-open text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Donación en Especie</p>
                 </div>
 
@@ -748,7 +754,7 @@
             </div>
 
             <!-- Yape -->
-            <div class="float-animation card-hover-effect group relative h-full">
+            <div class="float-animation card-hover-effect group relative h-full mt-4 sm:mt-0">
                 <!-- Badge -->
                 <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
                     <div
@@ -797,7 +803,7 @@
             </div>
 
             <!-- PayPal -->
-            <div class="float-animation card-hover-effect group h-full">
+            <div class="float-animation card-hover-effect group h-full mt-4 sm:mt-0">
                 <div
                     class="relative bg-yellow-900 backdrop-blur-xl p-8 border border-yellow-700/50 overflow-hidden flex flex-col h-full">
                     <div
@@ -851,34 +857,32 @@
 
 
     <!-- Respaldo -->
-    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+    <section class="bg-primary-700 py-12 text-neutral-50 w-full mx-auto">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
 
             <!-- Título -->
             <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Nos Respaldan</h3>
 
-            <!-- Íconos -->
-            <div class="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-32 text-center">
+            <!-- Íconos en grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-earth-americas text-accent-500 text-2xl"></i></p>
+                    <p><i class="fa-solid fa-earth-americas text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Alianza Global</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p>
-                    <h1 class="text-accent-500 text-2xl font-bold">PE</h1>
-                    </p>
+                    <p><span class="text-accent-500 text-3xl font-bold">PE</span></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Coordinadora Nacional</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-handshake text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-handshake text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Red Internacional</p>
                 </div>
 
                 <div class="group transition animate-delay-2 icon-pulse">
-                    <p><i class="fa-solid fa-landmark text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p><i class="fa-solid fa-landmark text-accent-500 text-3xl"></i></p>
                     <p class="text-body text-neutral-100 font-medium mt-2">Organización Internacional</p>
                 </div>
 
@@ -972,7 +976,7 @@
             </div>
 
             <!-- Google Maps -->
-            <div class="mt-16 rounded-2xl overflow-hidden shadow-lg">
+            <div class="mt-16 overflow-hidden shadow-lg">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.2025223693604!2d-76.88028482493583!3d-12.234562388017137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bd2b18b8b6b3%3A0x7bcfe74295c6655d!2sSinergia%20Por%20La%20Infancia!5e0!3m2!1ses-419!2spe!4v1758306124652!5m2!1ses-419!2spe"
                     class="w-full h-80 border-0" allowfullscreen="" loading="lazy"></iframe>
