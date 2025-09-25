@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Donaciones Dinámicas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(2deg);
+            }
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+            }
+        }
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-animation:nth-child(2) {
+            animation-delay: -2s;
+        }
+
+        .float-animation:nth-child(3) {
+            animation-delay: -4s;
+        }
+
+        .float-animation:nth-child(4) {
+            animation-delay: -1s;
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        .slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+
+        .gradient-border {
+            background: linear-gradient(45deg, #10b981, #3b82f6, #8b5cf6, #f59e0b);
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .card-hover-effect {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover-effect:hover {
+            transform: translateY(-12px) scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 min-h-screen">
+    <!-- Fondo con efectos -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div
+            class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-emerald-400/20 to-blue-500/20 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-500/20 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl">
+        </div>
+    </div>
+
+    <div class="relative z-10 py-20 px-4">
+        <!-- Header de la sección -->
+        <div class="text-center mb-16">
+            <h2
+                class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Haz la Diferencia
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Cada donación cuenta una historia de esperanza. Elige tu forma de impactar vidas y construir un futuro
+                mejor.
+            </p>
+
+            <!-- Indicador de progreso global -->
+            <div class="mt-8 max-w-md mx-auto">
+                <div class="flex justify-between text-sm text-gray-400 mb-2">
+                    <span>Meta: $100,000</span>
+                    <span>$67,420 recaudados</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                    <div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-3 rounded-full pulse-glow"
+                        style="width: 67.42%"></div>
+                </div>
+                <p class="text-green-400 text-sm mt-2">¡67% completado!</p>
+            </div>
+        </div>
+
+        <!-- Cards de donación -->
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Card 1: Básico -->
+            <div class="float-animation card-hover-effect group">
+                <div
+                    class="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Icono -->
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-2">En Especie</h3>
+                    <p class="text-gray-300 text-sm mb-6">Puedes donar directamente artículos.</p>
+
+                    <!-- Beneficios -->
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center text-gray-300 text-sm">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Ropa y zapatos
+                        </li>
+                        <li class="flex items-center text-gray-300 text-sm">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Útiles escolares
+                        </li>
+                        <li class="flex items-center text-gray-300 text-sm">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Alimentos
+                        </li>
+                        <li class="flex items-center text-gray-300 text-sm">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Juguetes y libros
+                        </li>
+                        <li class="flex items-center text-gray-300 text-sm">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Otros en buen estado
+                        </li>
+                    </ul>
+
+                    <a href="https://api.whatsapp.com/send?phone=51998705600&text=Hola%2C+quiero+apoyar+a+Sinergia+por+la+Infancia"
+                        target="_blank" rel="noopener noreferrer"
+                        class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 rounded-2xl hover:from-emerald-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25">
+                        <i class="fa-brands fa-whatsapp"></i> Contactar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Impacto (Destacada) -->
+            <div class="float-animation card-hover-effect group relative">
+                <!-- Badge de popular -->
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div
+                        class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        MÁS POPULAR
+                    </div>
+                </div>
+
+                <div
+                    class="relative bg-gradient-to-br from-blue-900/90 to-purple-900/90 backdrop-blur-xl rounded-3xl p-8 border-2 border-transparent gradient-border overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Icono -->
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-2">Transferencia Bancaria</h3>
+                    <p class="text-gray-200 text-sm mb-6">BCP - SINERGIA POR LA INFANCIA</p>
+
+                    <!-- Beneficios -->
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                            <strong class="mr-1">Cuenta:</strong> 1941895118004
+                        </li>
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                            <strong class="mr-1">CCI:</strong> 00219400189511800493
+                        </li>
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                            <strong class="mr-1">RUC:</strong> 20511555991
+                        </li>
+                    </ul>
+
+                    <button
+                        class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-2xl hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
+                        Crear Impacto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Transformación -->
+            <div class="float-animation card-hover-effect group">
+                <div
+                    class="relative bg-gradient-to-br from-purple-900/80 to-pink-900/80 backdrop-blur-xl rounded-3xl p-8 border border-purple-700/50 overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Icono -->
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-2">Yape</h3>
+                    <p class="text-gray-200 text-sm mb-6">Número: <strong>998705600</strong></p>
+
+                    <img src="src/qr-yape.jpg"
+                        class="w-32 h-32 mx-auto bg-white p-2 rounded cursor-pointer hover:scale-110 hover-float transition mb-2"
+                        alt="QR Yape" onclick="openQR('Yape - 998705600', this.src)">
+
+                    <!-- Beneficios -->
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                            Escanea o copia el número
+                        </li>
+                    </ul>
+
+                    <button onclick="copyText('998705600')"
+                        class="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold py-3 rounded-2xl hover:from-purple-600 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+                        <i class="fa-solid fa-copy mr-2 icon-pulse"></i> Copiar Número
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Legado -->
+            <div class="float-animation card-hover-effect group">
+                <div
+                    class="relative bg-gradient-to-br from-yellow-900/80 to-orange-900/80 backdrop-blur-xl rounded-3xl p-8 border border-yellow-700/50 overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Icono -->
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-2">PayPal</h3>
+                    <p class="text-gray-200 text-sm mb-6">Haz tu donación de forma rápida y segura usando PayPal.</p>
+
+                    <!-- Beneficios -->
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                            Donación rápida y segura con PayPal
+                        </li>
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                            Protege tus datos y transacciones
+                        </li>
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                            Recibo inmediato de tu aporte
+                        </li>
+                        <li class="flex items-center text-gray-200 text-sm">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                            Contribución 100% destinada a programas sociales
+                        </li>
+                    </ul>
+
+
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=ZRC2G8KXZPKDU" target="_blank"
+                        class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-semibold py-3 rounded-2xl hover:from-yellow-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25">
+                        Donar con PayPal<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to action final -->
+        <div class="text-center mt-16">
+            <div
+                class="inline-flex items-center space-x-4 bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-white/20">
+                <div class="flex -space-x-2">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full border-2 border-white">
+                    </div>
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full border-2 border-white">
+                    </div>
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full border-2 border-white">
+                    </div>
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full border-2 border-white flex items-center justify-center">
+                        <span class="text-xs text-white font-bold">+</span>
+                    </div>
+                </div>
+                <p class="text-white font-medium">
+                    Únete a <span class="text-emerald-400 font-bold">847+</span> personas que ya están creando impacto
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

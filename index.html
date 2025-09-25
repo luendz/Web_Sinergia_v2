@@ -188,8 +188,6 @@
             z-index: 0;
         }
 
-
-
         .hero-bg>* {
             position: relative;
             z-index: 1;
@@ -321,7 +319,10 @@
     <!-- Hero -->
     <section id="inicio"
         class="min-h-screen hero-bg flex items-center justify-center text-neutral-50 text-center relative overflow-hidden">
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 animate-float">
+        <div class="relative z-10 max-w-5xl mx-auto
+            px-2 sm:px-6 lg:px-12 
+            pt-16 sm:pt-24 lg:pt-32 
+            animate-float">
             <!-- Título Hero -->
             <h1 class="text-3xl sm:text-5xl lg:text-h1 font-bold mb-6 sm:mb-8 leading-tight reveal">
                 Somos Sinergia
@@ -337,36 +338,39 @@
                 Brindando amor, protección y oportunidades a niños en situación de calle.
             </p>
 
-            <!-- Estadísticas -->
+            <!-- Info -->
             <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12">
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                    <div class="group transition reveal animate-delay-1">
-                        <h3 class="text-xl sm:text-2xl lg:text-h3 font-bold mb-2">20</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-8 text-center">
+                    <div class="">
+                        <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="20">20</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Años de experiencia</p>
                     </div>
-                    <div class="group transition reveal animate-delay-2">
-                        <h3 class="text-xl sm:text-2xl lg:text-h3 font-bold mb-2">4</h3>
+                    <div class="">
+                        <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="4">4</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Programas activos</p>
                     </div>
-                    <div class="group transition reveal animate-delay-3">
-                        <h3 class="text-xl sm:text-2xl lg:text-h3 font-bold mb-2">2005</h3>
+                    <div class="">
+                        <h3 class="counter text-xl sm:text-2xl lg:text-h3 font-bold mb-2" data-target="2005">2005</h3>
                         <p class="text-sm sm:text-base text-neutral-100 font-medium">Año de fundación</p>
+                    </div>
+                    <div class="reveal animate-delay-3">
+                        <h3 class="text-xl sm:text-2xl lg:text-h3 font-bold mb-2">Lima</h3>
+                        <p class="text-sm sm:text-base text-neutral-100 font-medium">Callao</p>
                     </div>
                 </div>
             </div>
 
             <!-- Botón CTA -->
-            <a href="#donaciones"
-                class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-full text-lg sm:text-xl transition animate-float-glow">
+            <a href="index.html#donaciones"
+                class="inline-block bg-gradient-to-r from-accent-600/45 to-accent-600/80 hover:bg-accent-600 text-white font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-full text-lg sm:text-xl transition">
                 Ayúdanos a Ayudar <i class="fa-solid fa-arrow-up-right-from-square ml-2"></i>
             </a>
         </div>
     </section>
 
 
-
     <!-- Testimonios -->
-    <section class="bg-primary-700 py-24 text-neutral-50">
+    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto ">
 
         <div class="max-w-5xl mx-auto px-6 text-center relative reveal">
             <!-- Comillas izquierda -->
@@ -399,7 +403,7 @@
 
 
     <!-- Nosotros -->
-    <section id="nosotros" class="bg-gradient-to-br from-blue-50 via-white to-blue-100 flex">
+    <section id="nosotros" class="flex w-[90%] lg:w-[80%] mx-auto py-16">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Texto -->
@@ -422,8 +426,9 @@
         </div>
     </section>
 
+
     <!-- Historia -->
-    <section id="acerca" class="bg-white flex">
+    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto ">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Imagen -->
@@ -444,8 +449,8 @@
         </div>
     </section>
 
-    <!-- Misión -->
-    <section id="acerca" class="bg-gradient-to-br from-blue-50 via-white to-blue-100 flex">
+    <!-- Misión y Visión -->
+    <section id="acerca" class="flex w-[90%] lg:w-[80%] mx-auto ">
         <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 reveal">
 
             <!-- Texto -->
@@ -477,8 +482,8 @@
 
 
     <!-- Valores -->
-    <section class="bg-primary-700 py-24 text-neutral-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
 
             <!-- Título -->
             <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Nuestros Valores</h3>
@@ -517,7 +522,7 @@
 
 
     <!-- Programas -->
-    <section id="programas" class="bg-white py-24 sm:py-24 ">
+    <section id="programas" class="py-24 sm:py-24 ">
         <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12">
             <h3 class="text-3xl font-bold text-neutral-800 mb-4">Nuestros <span
                     class="text-primary-600">Programas</span></h3>
@@ -528,11 +533,10 @@
         </div>
 
         <!-- Grid de programas -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-[90%] lg:w-[75%] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-[90%] lg:w-[80%] mx-auto">
 
             <div class="relative overflow-hidden shadow-lg w-full max-w-sm h-[350px] sm:h-[400px] lg:h-[500px] bg-cover bg-center reveal"
                 style="background-image: url('src/programas/programa-1.jpg');">
-
                 <!-- Overlay oscuro -->
                 <div class="absolute inset-0 bg-black/40"></div>
 
@@ -600,110 +604,45 @@
         </div>
     </section>
 
-    <!-- Galería de Memorias -->
-    <section id="memorias" class="py-16 sm:py-24 bg-neutral-900 hidden">
-        <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12 sm:mb-16 mt-20 sm:mt-32">
-            <!-- Título sección -->
-            <h2 class="text-h2 font-bold text-neutral-800 mb-4">Galería de Memorias</h2>
-            <p class="text-body text-paragraph max-w-2xl mx-auto leading-relaxed">
-                Momentos que reflejan nuestro compromiso con los niños, niñas y adolescentes.
-            </p>
-        </div>
 
-        <!-- Grid tipo Masonry -->
-        <div class="w-[90%] lg:w-[75%] mx-auto columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+    <!-- Unete -->
+    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
 
-            <!-- Imagen 1 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(0)">
-                <img src="src/galeria/gallery-1.jpg" alt="Galería 1"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+            <!-- Título -->
+            <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Únete a Nuestra Familia</h3>
 
-            <!-- Imagen 2 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(1)">
-                <img src="src/galeria/gallery-2.jpg" alt="Galería 2"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+            <!-- Íconos -->
+            <div class="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-32 text-center">
 
-            <!-- Imagen 3 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(2)">
-                <img src="src/galeria/gallery-3.jpg" alt="Galería 3"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-bullhorn text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Difunde Nuestra Misión</p>
+                </div>
 
-            <!-- Imagen 4 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(3)">
-                <img src="src/galeria/gallery-4.jpg" alt="Galería 4"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-people-carry-box text-accent-500 text-2xl"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Apóyanos</p>
+                </div>
 
-            <!-- Imagen 5 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(4)">
-                <img src="src/galeria/gallery-5.jpg" alt="Galería 5"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-handshake-angle text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Voluntariado</p>
+                </div>
 
-            <!-- Imagen 6 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(5)">
-                <img src="src/galeria/gallery-6.jpg" alt="Galería 6"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-box-open text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Donación en Especie</p>
+                </div>
 
-            <!-- Imagen 7 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(6)">
-                <img src="src/galeria/gallery-7.jpg" alt="Galería 7"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
-            </div>
-
-            <!-- Imagen 8 -->
-            <div class="relative group cursor-pointer reveal" onclick="openModal(7)">
-                <img src="src/galeria/gallery-8.jpg" alt="Galería 8"
-                    class="w-full rounded-lg shadow-md group-hover:scale-105 transition duration-500 object-cover">
             </div>
         </div>
     </section>
 
 
-    <!-- Modal de galería -->
-    <div id="galleryModal" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-4">
-        <!-- Botón cerrar -->
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent-500">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-
-        <!-- Imagen -->
-        <img id="modalImage" src="" alt="Imagen ampliada"
-            class="max-h-[80vh] max-w-full sm:max-w-[90%] rounded-lg shadow-xl object-contain">
-
-        <!-- Controles -->
-        <button onclick="prevImage()" class="absolute left-4 sm:left-8 text-white text-4xl hover:text-accent-500">
-            <i class="fa-solid fa-chevron-left"></i>
-        </button>
-        <button onclick="nextImage()" class="absolute right-4 sm:right-8 text-white text-4xl hover:text-accent-500">
-            <i class="fa-solid fa-chevron-right"></i>
-        </button>
-    </div>
-
-
-    <!-- Modal -->
-    <div id="imageModal"
-        class="fixed inset-0 z-50 hidden bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-4xl w-full mx-4 overflow-hidden shadow-2xl">
-            <div class="flex justify-between items-center p-6 border-b">
-                <h3 class="text-xl font-bold text-paragraph" id="modalTitle">Imagen de la galería</h3>
-                <button onclick="closeModal()"
-                    class="text-gray-500 hover:text-gray-700 text-3xl font-bold transition-colors">&times;</button>
-            </div>
-            <div class="p-8 text-center">
-                <img id="modalImage" src="" alt="" class="w-full max-h-96 object-contain rounded-xl shadow-lg">
-                <p class="text-lg text-paragraph mt-4" id="modalContent">Descripción de la imagen</p>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Donaciones -->
-    <section id="donaciones" class="bg-neutral-900 py-24 sm:py-24 ">
+    <section id="donaciones" class="py-16 sm:py-16 ">
+
         <div class="w-[90%] lg:w-[75%] mx-auto text-center mb-12">
             <!-- Título -->
             <h3 class="text-3xl font-bold mb-4 text-neutral-800">Apóyanos con tu
@@ -714,98 +653,243 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 w-[90%] lg:w-[75%] mx-auto mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 w-[90%] lg:w-[80%] mx-auto">
 
-            <!-- Transferencia bancaria -->
-            <div
-                class="bg-white py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal text-black">
-                <img src="src/bcp-logo.png" class="w-20 mx-auto mb-4" alt="BCP">
-                <h3 class="text-2xl font-semibold mb-4">Transferencia Bancaria</h3>
-                <p class="text-small">BCP - SINERGIA POR LA INFANCIA</p>
-                <div class="mt-4 space-y-1 text-small">
-                    <p><strong>Cuenta:</strong> 1941895118004</p>
-                    <p><strong>CCI:</strong> 00219400189511800493</p>
-                    <p><strong>RUC:</strong> 20511555991</p>
+            <!-- En Especie -->
+            <div class="float-animation card-hover-effect group h-full">
+                <div
+                    class="relative bg-gray-900 backdrop-blur-xl p-8 border border-gray-700/50 overflow-hidden flex flex-col h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="flex-1">
+                        <!-- Icono -->
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-box-open text-white text-2xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">Apoyo Material</h3>
+                        <p class="text-gray-300 text-sm mb-6">Puedes aportar artículos en buen estado.</p>
+
+                        <!-- Beneficios -->
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-gray-300 text-sm">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                                Ropa y zapatos
+                            </li>
+                            <li class="flex items-center text-gray-300 text-sm">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                                Útiles escolares
+                            </li>
+                            <li class="flex items-center text-gray-300 text-sm">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                                Alimentos
+                            </li>
+                            <li class="flex items-center text-gray-300 text-sm">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                                Juguetes y libros
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón -->
+                    <a href="https://api.whatsapp.com/send?phone=51998705600&text=Hola%2C+quiero+apoyar+a+Sinergia+por+la+Infancia"
+                        target="_blank" rel="noopener noreferrer"
+                        class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-3 rounded-2xl hover:from-emerald-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-500/25">
+                        <i class="fa-brands fa-whatsapp"></i>Contactar
+                    </a>
                 </div>
-                <button onclick="copyText('00219400189511800493')"
-                    class="mt-4 bg-blue-700 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-small sm:text-body hover-float transition">
-                    <i class="fa-solid fa-copy mr-2 icon-pulse"></i> Copiar CCI
-                </button>
+            </div>
+
+            <!-- BCP -->
+            <div class="float-animation card-hover-effect group h-full">
+                <div
+                    class="relative bg-blue-900 backdrop-blur-xl p-8 border-2 border-transparent gradient-border overflow-hidden flex flex-col h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="flex-1">
+                        <!-- Icono -->
+                        <div
+                            class="w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <img src="src/bcp-logo.png" class="w-20 mx-auto mb-4" alt="BCP">
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">Transferencia Bancaria</h3>
+                        <p class="text-gray-200 text-sm mb-6">BCP - SINERGIA POR LA INFANCIA</p>
+
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <strong class="mr-1">Cuenta:</strong>1941895118004
+                            </li>
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <strong class="mr-1">CCI:</strong>00219400189511800493
+                            </li>
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
+                                <strong class="mr-1">RUC:</strong>20511555991
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón -->
+                    <button onclick="copyText('00219400189511800493')"
+                        class="mt-auto w-full bg-gradient-to-br from-blue-700 to-blue-600/20 text-white font-semibold py-3 rounded-2xl hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
+                        <i class="fa-solid fa-copy mr-2 icon-pulse"></i>Copiar CCI
+                    </button>
+                </div>
             </div>
 
             <!-- Yape -->
-            <div
-                class="bg-white py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal text-black">
-                <img src="src/yape-logo.png" class="w-20 mx-auto mb-4" alt="Yape">
-                <h3 class="text-2xl font-semibold mb-4">Yape</h3>
-                <p class="text-small">Número: <strong>998705600</strong></p>
-                <div class="mt-4">
-                    <img src="src/qr-yape.jpg"
-                        class="w-32 h-32 mx-auto bg-white p-2 rounded cursor-pointer hover:scale-110 hover-float transition"
-                        alt="QR Yape" onclick="openQR('Yape - 998705600', this.src)">
-                    <p class="mt-2 text-small">Escanea o copia el número</p>
+            <div class="float-animation card-hover-effect group relative h-full">
+                <!-- Badge -->
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                    <div
+                        class="bg-gradient-to-r from-blue-700/80 to-blue-600/80 text-white px-2 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        MÁS POPULAR
+                    </div>
+                </div>
+
+                <div
+                    class="relative bg-purple-900 backdrop-blur-xl p-8 border border-purple-700/50 overflow-hidden flex flex-col h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="flex-1">
+                        <!-- Icono -->
+                        <div
+                            class="w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <img src="src/yape-logo.png" class="w-20 mx-auto mb-4" alt="Yape">
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">Yape</h3>
+                        <p class="text-gray-200 text-sm mb-1">Número: <strong>998705600</strong></p>
+                        <p class="text-gray-200 text-sm mb-6">YAPE - SINERGIA POR LA INFANCIA</p>
+
+                        <img src="src/qr-yape.jpg"
+                            class="w-32 h-32 mx-auto bg-white p-2 rounded cursor-pointer hover:scale-110 hover-float transition mb-2"
+                            alt="QR Yape" onclick="openQR('Yape - 998705600', this.src)">
+
+                        <!-- Beneficios -->
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                                Escanea o copia el número
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón -->
                     <button onclick="copyText('998705600')"
-                        class="mt-4 w-full bg-accent-500 hover:bg-accent-600 text-white rounded-lg py-2 hover-float transition text-small sm:text-body">
+                        class="mt-auto w-full bg-gradient-to-r from-purple-700 to-purple-800 text-white font-semibold py-3 rounded-2xl hover:from-purple-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                         <i class="fa-solid fa-copy mr-2 icon-pulse"></i> Copiar Número
                     </button>
                 </div>
             </div>
 
             <!-- PayPal -->
-            <div
-                class="bg-white py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal text-black">
-                <img src="src/paypal-logo.png" class="w-20 mx-auto mb-4" alt="PayPal">
-                <h3 class="text-2xl font-semibold mb-4">PayPal</h3>
-                <p class="text-small mb-4">Haz tu donación de forma rápida y segura usando PayPal.</p>
-                <a href="https://www.paypal.com/donate/?hosted_button_id=ZRC2G8KXZPKDU" target="_blank"
-                    class="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-lg shadow-md hover-float transition text-small sm:text-body">
-                    Donar con PayPal<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
-                </a>
+            <div class="float-animation card-hover-effect group h-full">
+                <div
+                    class="relative bg-yellow-900 backdrop-blur-xl p-8 border border-yellow-700/50 overflow-hidden flex flex-col h-full">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+
+                    <!-- Contenido -->
+                    <div class="flex-1">
+                        <!-- Icono -->
+                        <div
+                            class="w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <img src="src/paypal-logo.png" class="w-20 mx-auto mb-4" alt="PayPal">
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-2">PayPal</h3>
+                        <p class="text-gray-200 text-sm mb-6">Haz tu donación de forma rápida y segura usando PayPal.
+                        </p>
+
+                        <!-- Beneficios -->
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                                Donación rápida y segura con PayPal
+                            </li>
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                                Protege tus datos y transacciones
+                            </li>
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                                Recibo inmediato de tu aporte
+                            </li>
+                            <li class="flex items-center text-gray-200 text-sm">
+                                <span class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
+                                Contribución 100% destinada a programas sociales
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón -->
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=ZRC2G8KXZPKDU" target="_blank"
+                        class="mt-auto w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-3 rounded-2xl hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-orange-500/25">
+                        Donar con PayPal<i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
             </div>
 
-            <!-- Donaciones en especie -->
-            <div
-                class="bg-white py-6 px-4 sm:py-16 sm:px-8 text-center flex flex-col justify-between hover-float reveal text-black">
+        </div>
 
-                <div class="bg-white rounded-xl p-2 w-fit mx-auto mb-6">
-                    <i class="fa-solid fa-gifts text-5xl text-accent-500 p-2"></i>
+    </section>
+
+
+    <!-- Respaldo -->
+    <section class="bg-primary-700 py-12 text-neutral-50 w-[100%] lg:w-[100%] mx-auto  ">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center reveal">
+
+            <!-- Título -->
+            <h3 class="text-h3 mb-12 text-neutral-50 font-semibold">Nos Respaldan</h3>
+
+            <!-- Íconos -->
+            <div class="flex flex-wrap justify-center gap-8 sm:gap-16 lg:gap-32 text-center">
+
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-earth-americas text-accent-500 text-2xl"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Alianza Global</p>
                 </div>
 
-                <h3 class="text-2xl font-bold mb-4">En Especie</h3>
-                <p class="mb-3 text-small">Puedes donar directamente artículos:</p>
-                <ul class="space-y-2 text-small text-left inline-block mx-auto ">
-                    <li class="icon-pulse"><i class="fa-solid fa-shirt mr-2"></i> Ropa y zapatos</li>
-                    <li class="icon-pulse"><i class="fa-solid fa-book mr-2"></i> Útiles escolares</li>
-                    <li class="icon-pulse"><i class="fa-solid fa-mug-hot mr-2"></i> Alimentos</li>
-                    <li class="icon-pulse"><i class="fa-solid fa-robot mr-2"></i> Juguetes y libros</li>
-                    <li class="icon-pulse"><i class="fa-solid fa-gift mr-2"></i> Otros en buen estado</li>
-                </ul>
-                <a href="https://api.whatsapp.com/send?phone=51998705600&text=Hola%2C+quiero+apoyar+a+Sinergia+por+la+Infancia"
-                    target="_blank" rel="noopener noreferrer"
-                    class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg shadow-md hover-float transition text-small sm:text-body">
-                    <i class="fa-brands fa-whatsapp"></i> Contactar
-                </a>
-            </div>
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p>
+                    <h1 class="text-accent-500 text-2xl font-bold">PE</h1>
+                    </p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Coordinadora Nacional</p>
+                </div>
 
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-handshake text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Red Internacional</p>
+                </div>
+
+                <div class="group transition animate-delay-2 icon-pulse">
+                    <p><i class="fa-solid fa-landmark text-accent-500 text-2xl icon-pulse"></i></p>
+                    <p class="text-body text-neutral-100 font-medium mt-2">Organización Internacional</p>
+                </div>
+
+            </div>
         </div>
     </section>
 
 
-    <!-- Modal QR -->
-    <div id="qrModal" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center">
-        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-            <h3 id="qrTitle" class="text-lg font-bold mb-4 text-neutral-800"></h3>
-            <img id="qrImage" src="" alt="QR ampliado" class="w-64 h-64 mx-auto rounded border p-2 bg-white">
-            <button onclick="closeQR()"
-                class="mt-6 bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700">
-                Cerrar
-            </button>
-        </div>
-    </div>
-
     <!-- Contacto -->
-    <section id="contacto" class="bg-white py-24">
-        <div class="w-[90%] lg:w-[75%] mx-auto mt-32">
+    <section id="contacto" class="py-16 sm:py-16">
+        <div class="w-[90%] lg:w-[75%] mx-auto">
             <!-- Título -->
             <h4 class="text-4xl md:text-4xl font-bold text-center mb-16 text-primary-600">Contáctanos</h4>
 
@@ -817,13 +901,19 @@
                         <h3 class="text-h3 font-bold mb-4 flex items-center text-neutral-800">
                             Información
                         </h3>
-                        <ul class="space-y-3 text-body text-paragraph">
-                            <li><i class="fa-solid fa-location-dot mr-2 text-primary-600"></i> Parcela F-4 Sub Lote A-2
-                                Nro. S/N Sector el Olivar</li>
-                            <li><i class="fa-solid fa-phone mr-2 text-primary-600"></i> 01 4680405</li>
-                            <li><i class="fa-solid fa-mobile-screen-button mr-2 text-primary-600"></i> (+51) 998-705-600
+                        <ul class="space-y-3 text-body text-paragraph text-4xl">
+                            <li>
+                                <i class="fa-solid fa-location-dot mr-2 text-primary-600"></i>Parcela F-4 Sub Lote A-2
+                                Nro. S/N Sector el Olivar
                             </li>
-                            <li><i class="fa-solid fa-envelope mr-2 text-primary-600"></i> info@sinergiainfancia.org
+                            <li>
+                                <i class="fa-solid fa-phone mr-2 text-primary-600"></i>01 4680405
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen-button mr-2 text-primary-600"></i>(+51) 998-705-600
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope mr-2 text-primary-600"></i>info@sinergiainfancia.org
                             </li>
                         </ul>
                     </div>
@@ -850,7 +940,7 @@
                 </div>
 
                 <!-- Formulario -->
-                <div class="bg-white p-12 border border-neutral-200">
+                <div class="bg-white p-12 border border-black/20 shadow-lg   ">
                     <h3 class="text-h3 font-bold mb-6 flex items-center text-neutral-800">
                         Envíanos un Mensaje
                     </h3>
@@ -892,7 +982,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-primary-700 text-neutral-50 pt-16 pb-8">
+    <footer class="bg-primary-700 text-neutral-50 py-16">
         <div class="w-[90%] lg:w-[75%] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
 
             <!-- Logo + frase -->
@@ -950,6 +1040,58 @@
             </p>
         </div>
     </footer>
+
+
+    <!-- Modal de galería -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-4">
+        <!-- Botón cerrar -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent-500">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <!-- Imagen -->
+        <img id="modalImage" src="" alt="Imagen ampliada"
+            class="max-h-[80vh] max-w-full sm:max-w-[90%] rounded-lg shadow-xl object-contain">
+
+        <!-- Controles -->
+        <button onclick="prevImage()" class="absolute left-4 sm:left-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextImage()" class="absolute right-4 sm:right-8 text-white text-4xl hover:text-accent-500">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="imageModal"
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full mx-4 overflow-hidden shadow-2xl">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 class="text-xl font-bold text-paragraph" id="modalTitle">Imagen de la galería</h3>
+                <button onclick="closeModal()"
+                    class="text-gray-500 hover:text-gray-700 text-3xl font-bold transition-colors">&times;</button>
+            </div>
+            <div class="p-8 text-center">
+                <img id="modalImage" src="" alt="" class="w-full max-h-96 object-contain rounded-xl shadow-lg">
+                <p class="text-lg text-paragraph mt-4" id="modalContent">Descripción de la imagen</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal QR -->
+    <div id="qrModal" class="fixed inset-0 bg-black/80 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+            <h3 id="qrTitle" class="text-lg font-bold mb-4 text-neutral-800"></h3>
+            <img id="qrImage" src="" alt="QR ampliado" class="w-64 h-64 mx-auto rounded border p-2 bg-white">
+            <button onclick="closeQR()"
+                class="mt-6 bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
 
 </body>
 
