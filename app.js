@@ -113,9 +113,11 @@ const overlay = document.getElementById("mobile-overlay");
 
 if (menuBtn && mobileMenu && overlay) {
   menuBtn.addEventListener("click", () => {
+    // Mostrar / ocultar menú
     mobileMenu.classList.toggle("hidden");
     overlay.classList.toggle("hidden");
 
+    // Cambiar icono
     const icon = menuBtn.querySelector("i");
     icon.classList.toggle("fa-bars");
     icon.classList.toggle("fa-xmark");

@@ -134,14 +134,15 @@
 <body class="bg-neutral-50 text-neutral-900">
 
     <!-- Header -->
-    <header class="fixed top-5 left-0 w-full z-50">
-        <div class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md">
+    <header class="fixed top-5 left-0 w-full z-50 transition-all duration-300">
+        <div id="main-header"
+            class="w-[95%] mx-auto flex justify-between items-center h-16 sm:h-20 bg-primary-700 backdrop-blur-md shadow-none transition-all duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
 
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="index.html#inicio">
-                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-12 sm:h-16 lg:h-20">
+                    <a href="#inicio">
+                        <img src="src/sinergia-por-la-infancia.png" alt="Logo" class="h-20 sm:h-24 lg:h-24">
                     </a>
                 </div>
 
@@ -159,7 +160,7 @@
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="galeria.html" class="relative group">Memorias
+                    <a href="#" class="relative group">Memorias
                         <span
                             class="absolute left-0 -bottom-1 w-0 h-[2px] bg-neutral-50 transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -191,7 +192,7 @@
             <a href="index.html#inicio" class="hover:text-accent-500">Inicio</a>
             <a href="index.html#nosotros" class="hover:text-accent-500">Nosotros</a>
             <a href="index.html#programas" class="hover:text-accent-500">Programas</a>
-            <a href="index.html#memorias" class="hover:text-accent-500">Memorias</a>
+            <a href="#" class="hover:text-accent-500">Memorias</a>
             <a href="index.html#contacto" class="hover:text-accent-500">Contacto</a>
             <a href="index.html#donaciones"
                 class="px-6 py-3 bg-accent-500 rounded-full font-bold hover:bg-accent-600 transition ml-2">
@@ -216,7 +217,6 @@
     </header>
 
 
-
     <!-- Botón Ir arriba -->
     <button id="scrollTopBtn"
         class="hidden fixed bottom-6 right-6 bg-accent-500 text-white p-4 rounded-full shadow-lg text-xl hover:bg-accent-600 transition animate-bounce z-50">
@@ -227,6 +227,7 @@
     <!-- Barra de progreso -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent-500 z-[9999]" style="width: 0%;"></div>
 
+
     <!-- Hero -->
     <section class="hero-bg flex items-center justify-center text-center min-h-[50vh] relative text-white">
         <div class="z-10 px-6">
@@ -236,6 +237,7 @@
             </p>
         </div>
     </section>
+
 
     <!-- Galería tipo Masonry -->
     <section class="py-16 bg-neutral-50">
@@ -425,6 +427,7 @@
         </div>
     </section>
 
+
     <!-- Modal -->
     <div id="galleryModal" class="fixed inset-0 bg-black/90 hidden z-50 flex items-center justify-center p-4">
         <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-accent-500">
@@ -439,6 +442,7 @@
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     </div>
+
 
     <!-- Footer -->
     <footer class="bg-primary-700 text-neutral-50 pt-16 pb-8">
@@ -458,11 +462,16 @@
                 <h3 class="text-h3 font-semibold text-white mb-4">Enlaces</h3>
                 <ul class="space-y-2">
                     <li><a href="index.html#inicio" class="text-small hover:text-accent-500 transition">Inicio</a></li>
-                    <li><a href="index.html#nosotros" class="text-small hover:text-accent-500 transition">Nosotros</a></li>
-                    <li><a href="index.html#programas" class="text-small hover:text-accent-500 transition">Programas</a></li>
-                    <li><a href="index.html#memorias" class="text-small hover:text-accent-500 transition">Memorias</a></li>
-                    <li><a href="index.html#donaciones" class="text-small hover:text-accent-500 transition">Donaciones</a></li>
-                    <li><a href="index.html#contacto" class="text-small hover:text-accent-500 transition">Contacto</a></li>
+                    <li><a href="index.html#nosotros" class="text-small hover:text-accent-500 transition">Nosotros</a>
+                    </li>
+                    <li><a href="index.html#programas" class="text-small hover:text-accent-500 transition">Programas</a>
+                    </li>
+                    <li><a href="index.html#memorias" class="text-small hover:text-accent-500 transition">Memorias</a>
+                    </li>
+                    <li><a href="index.html#donaciones"
+                            class="text-small hover:text-accent-500 transition">Donaciones</a></li>
+                    <li><a href="index.html#contacto" class="text-small hover:text-accent-500 transition">Contacto</a>
+                    </li>
                 </ul>
             </div>
 
